@@ -1,0 +1,644 @@
+{
+  "users": {
+    "demo@smartspend.vn": {
+      "id": "u_demo",
+      "email": "demo@smartspend.vn",
+      "passwordHash": "123",
+      "name": "Minh",
+      "role": "Chồng",
+      "displayName": "Chồng (Minh)",
+      "linkToken": "123456",
+      "householdInviteCode": "7F3K-9QXZ"
+    },
+    "vo_lan@smartspend.vn": {
+      "id": "u_lan",
+      "email": "vo_lan@smartspend.vn",
+      "passwordHash": "123",
+      "name": "Lan",
+      "role": "Vợ",
+      "displayName": "Vợ (Lan)",
+      "linkToken": "654321",
+      "householdInviteCode": "7F3K-9QXZ"
+    }
+  },
+  "telegramLinks": {},
+  "households": {
+    "7F3K-9QXZ": {
+      "household": {
+        "id": "hh_default",
+        "name": "Gia đình nhỏ ấm áp 🏡",
+        "inviteCode": "7F3K-9QXZ",
+        "createdAt": "2026-07-04T19:34:59.783Z",
+        "members": [
+          {
+            "id": "mem_default_1",
+            "name": "Minh",
+            "role": "Chồng",
+            "displayName": "Chồng (Minh)",
+            "joinedAt": "2026-07-04T19:34:59.783Z",
+            "isOwner": true
+          },
+          {
+            "id": "mem_default_2",
+            "name": "Lan",
+            "role": "Vợ",
+            "displayName": "Vợ (Lan)",
+            "joinedAt": "2026-07-04T19:34:59.783Z"
+          },
+          {
+            "id": "mem_default_3",
+            "name": "Đức",
+            "role": "Con",
+            "displayName": "Con (Đức)",
+            "joinedAt": "2026-07-04T19:34:59.783Z"
+          }
+        ]
+      },
+      "transactions": [
+        {
+          "id": "t_demo_1",
+          "description": "Lương tháng này nhận được",
+          "amount": -18000000,
+          "category": "Thu nhập",
+          "date": "2026-06-17",
+          "note": "Lương chính thức công ty",
+          "createdAt": "2026-07-04T19:34:59.873Z"
+        },
+        {
+          "id": "t_demo_2",
+          "description": "Thanh toán tiền phòng trọ",
+          "amount": 3500000,
+          "category": "Nhà ở",
+          "date": "2026-06-20",
+          "note": "Bao gồm cả điện nước và xe cộ",
+          "createdAt": "2026-07-04T19:34:59.873Z"
+        },
+        {
+          "id": "t_demo_3",
+          "description": "Đổ xăng xe máy đầy bình",
+          "amount": 60000,
+          "category": "Di chuyển",
+          "date": "2026-06-23",
+          "createdAt": "2026-07-04T19:34:59.873Z"
+        },
+        {
+          "id": "t_demo_4",
+          "description": "Mua thực phẩm siêu thị cuối tuần",
+          "amount": 750000,
+          "category": "Ăn uống",
+          "date": "2026-06-27",
+          "note": "Thịt, rau củ và sữa cho cả tuần",
+          "createdAt": "2026-07-04T19:34:59.873Z"
+        },
+        {
+          "id": "t_demo_5",
+          "description": "Khóa học ngoại ngữ tiếng Anh giao tiếp",
+          "amount": 1200000,
+          "category": "Học tập",
+          "date": "2026-06-29",
+          "note": "Đăng ký khóa học 3 tháng online",
+          "createdAt": "2026-07-04T19:34:59.873Z"
+        },
+        {
+          "id": "t_demo_6",
+          "description": "Thưởng dự án freelancer ngoài giờ",
+          "amount": -3500000,
+          "category": "Thu nhập",
+          "date": "2026-06-30",
+          "note": "Thiết kế logo thương hiệu",
+          "createdAt": "2026-07-04T19:34:59.873Z"
+        },
+        {
+          "id": "t_demo_7",
+          "description": "Mua thuốc tây trị cảm cúm",
+          "amount": 150000,
+          "category": "Sức khỏe",
+          "date": "2026-07-01",
+          "createdAt": "2026-07-04T19:34:59.873Z"
+        },
+        {
+          "id": "t_demo_8",
+          "description": "Vé xem phim CGV và bỏng ngô",
+          "amount": 220000,
+          "category": "Giải trí",
+          "date": "2026-07-02",
+          "note": "Đi xem phim bom tấn cùng bạn bè",
+          "createdAt": "2026-07-04T19:34:59.873Z"
+        },
+        {
+          "id": "t_demo_9",
+          "description": "Ăn trưa cơm văn phòng",
+          "amount": 45000,
+          "category": "Ăn uống",
+          "date": "2026-07-03",
+          "createdAt": "2026-07-04T19:34:59.873Z"
+        },
+        {
+          "id": "t_demo_10",
+          "description": "Mua áo khoác gió thời trang",
+          "amount": 450000,
+          "category": "Mua sắm",
+          "date": "2026-07-04",
+          "createdAt": "2026-07-04T19:34:59.873Z"
+        },
+        {
+          "id": "t_demo_11",
+          "description": "Cà phê sáng cùng đồng nghiệp",
+          "amount": 35000,
+          "category": "Ăn uống",
+          "date": "2026-07-05",
+          "createdAt": "2026-07-04T19:34:59.873Z"
+        }
+      ],
+      "categories": [
+        {
+          "id": "cat_1",
+          "name": "Ăn uống",
+          "icon": "🍔",
+          "limitAmount": 5000000,
+          "isRecurring": true
+        },
+        {
+          "id": "cat_2",
+          "name": "Di chuyển",
+          "icon": "🚗",
+          "limitAmount": 1200000,
+          "isRecurring": true
+        },
+        {
+          "id": "cat_3",
+          "name": "Nhà ở",
+          "icon": "🏠",
+          "limitAmount": 4000000,
+          "isRecurring": true
+        },
+        {
+          "id": "cat_4",
+          "name": "Giải trí",
+          "icon": "🎉",
+          "limitAmount": 2000000,
+          "isRecurring": true
+        },
+        {
+          "id": "cat_5",
+          "name": "Sức khỏe",
+          "icon": "💊",
+          "limitAmount": 600000,
+          "isRecurring": false
+        },
+        {
+          "id": "cat_6",
+          "name": "Học tập",
+          "icon": "📚",
+          "limitAmount": 1500000,
+          "isRecurring": true
+        },
+        {
+          "id": "cat_7",
+          "name": "Mua sắm",
+          "icon": "🛒",
+          "limitAmount": 3000000,
+          "isRecurring": true
+        },
+        {
+          "id": "cat_9",
+          "name": "Tiết kiệm & Tích lũy",
+          "icon": "🐖",
+          "limitAmount": 2000000,
+          "isRecurring": true
+        },
+        {
+          "id": "cat_8",
+          "name": "Khác",
+          "icon": "📦",
+          "limitAmount": 1000000,
+          "isRecurring": false
+        }
+      ],
+      "goals": [
+        {
+          "id": "g_1",
+          "name": "Tích lũy mua Laptop mới",
+          "targetAmount": 30000000,
+          "currentAmount": 12000000,
+          "targetDate": "2026-12-31",
+          "createdAt": "2026-07-04T19:34:59.874Z"
+        },
+        {
+          "id": "g_2",
+          "name": "Quỹ khẩn cấp phòng ngừa rủi ro",
+          "targetAmount": 15000000,
+          "currentAmount": 7000000,
+          "createdAt": "2026-07-04T19:34:59.874Z"
+        }
+      ]
+    },
+    "0W5I-QBPQ": {
+      "household": {
+        "id": "hh_1783193861649",
+        "name": "hâha",
+        "inviteCode": "0W5I-QBPQ",
+        "createdAt": "2026-07-04T19:37:41.649Z",
+        "members": [
+          {
+            "id": "mem_1783193861649_1",
+            "name": "tranhoan482003@gmail.com",
+            "role": "Cá nhân",
+            "displayName": "Cá nhân (tranhoan482003@gmail.com)",
+            "joinedAt": "2026-07-04T19:37:41.649Z"
+          }
+        ]
+      },
+      "transactions": [],
+      "categories": [
+        {
+          "id": "cat_1",
+          "name": "Ăn uống",
+          "icon": "🍔",
+          "limitAmount": 5000000,
+          "isRecurring": true
+        },
+        {
+          "id": "cat_2",
+          "name": "Di chuyển",
+          "icon": "🚗",
+          "limitAmount": 1200000,
+          "isRecurring": true
+        },
+        {
+          "id": "cat_3",
+          "name": "Nhà ở",
+          "icon": "🏠",
+          "limitAmount": 4000000,
+          "isRecurring": true
+        },
+        {
+          "id": "cat_4",
+          "name": "Giải trí",
+          "icon": "🎉",
+          "limitAmount": 2000000,
+          "isRecurring": true
+        },
+        {
+          "id": "cat_5",
+          "name": "Sức khỏe",
+          "icon": "💊",
+          "limitAmount": 600000,
+          "isRecurring": false
+        },
+        {
+          "id": "cat_6",
+          "name": "Học tập",
+          "icon": "📚",
+          "limitAmount": 1500000,
+          "isRecurring": true
+        },
+        {
+          "id": "cat_7",
+          "name": "Mua sắm",
+          "icon": "🛒",
+          "limitAmount": 3000000,
+          "isRecurring": true
+        },
+        {
+          "id": "cat_9",
+          "name": "Tiết kiệm & Tích lũy",
+          "icon": "🐖",
+          "limitAmount": 2000000,
+          "isRecurring": true
+        },
+        {
+          "id": "cat_8",
+          "name": "Khác",
+          "icon": "📦",
+          "limitAmount": 1000000,
+          "isRecurring": false
+        }
+      ],
+      "goals": [
+        {
+          "id": "g_1",
+          "name": "Tích lũy mua Laptop mới",
+          "targetAmount": 30000000,
+          "currentAmount": 12000000,
+          "targetDate": "2026-12-31",
+          "createdAt": "2026-07-04T19:37:41.649Z"
+        },
+        {
+          "id": "g_2",
+          "name": "Quỹ khẩn cấp phòng ngừa rủi ro",
+          "targetAmount": 15000000,
+          "currentAmount": 7000000,
+          "createdAt": "2026-07-04T19:37:41.649Z"
+        }
+      ]
+    },
+    "ZNRY-KVLB": {
+      "household": {
+        "id": "hh_1785922119319",
+        "name": "kamen rider",
+        "inviteCode": "ZNRY-KVLB",
+        "createdAt": "2026-08-05T09:28:39.319Z",
+        "members": [
+          {
+            "id": "mem_1785922119319_1",
+            "name": "duchoan772003@gmail.com",
+            "role": "Cá nhân",
+            "displayName": "Cá nhân (duchoan772003@gmail.com)",
+            "joinedAt": "2026-08-05T09:28:39.319Z"
+          },
+          {
+            "id": "mem_user_1785922293600",
+            "name": "duchoan77482003@gmail.com",
+            "role": "Cá nhân",
+            "displayName": "Cá nhân (duchoan77482003@gmail.com)",
+            "joinedAt": "2026-08-05T09:31:33.600Z"
+          }
+        ]
+      },
+      "transactions": [],
+      "categories": [
+        {
+          "id": "cat_1",
+          "name": "Ăn uống",
+          "icon": "🍔",
+          "limitAmount": 5000000,
+          "isRecurring": true
+        },
+        {
+          "id": "cat_2",
+          "name": "Di chuyển",
+          "icon": "🚗",
+          "limitAmount": 1200000,
+          "isRecurring": true
+        },
+        {
+          "id": "cat_3",
+          "name": "Nhà ở",
+          "icon": "🏠",
+          "limitAmount": 4000000,
+          "isRecurring": true
+        },
+        {
+          "id": "cat_4",
+          "name": "Giải trí",
+          "icon": "🎉",
+          "limitAmount": 2000000,
+          "isRecurring": true
+        },
+        {
+          "id": "cat_5",
+          "name": "Sức khỏe",
+          "icon": "💊",
+          "limitAmount": 600000,
+          "isRecurring": false
+        },
+        {
+          "id": "cat_6",
+          "name": "Học tập",
+          "icon": "📚",
+          "limitAmount": 1500000,
+          "isRecurring": true
+        },
+        {
+          "id": "cat_7",
+          "name": "Mua sắm",
+          "icon": "🛒",
+          "limitAmount": 3000000,
+          "isRecurring": true
+        },
+        {
+          "id": "cat_9",
+          "name": "Tiết kiệm & Tích lũy",
+          "icon": "🐖",
+          "limitAmount": 2000000,
+          "isRecurring": true
+        },
+        {
+          "id": "cat_8",
+          "name": "Khác",
+          "icon": "📦",
+          "limitAmount": 1000000,
+          "isRecurring": false
+        }
+      ],
+      "goals": [
+        {
+          "id": "g_1",
+          "name": "Tích lũy mua Laptop mới",
+          "targetAmount": 30000000,
+          "currentAmount": 12000000,
+          "targetDate": "2026-12-31",
+          "createdAt": "2026-08-05T09:28:39.319Z"
+        },
+        {
+          "id": "g_2",
+          "name": "Quỹ khẩn cấp phòng ngừa rủi ro",
+          "targetAmount": 15000000,
+          "currentAmount": 7000000,
+          "createdAt": "2026-08-05T09:28:39.319Z"
+        }
+      ]
+    },
+    "ZHKU-EQ36": {
+      "household": {
+        "id": "hh_1785922145456",
+        "name": "haha",
+        "inviteCode": "ZHKU-EQ36",
+        "createdAt": "2026-08-05T09:29:05.456Z",
+        "members": [
+          {
+            "id": "mem_1785922145456_1",
+            "name": "duchoan772003@gmail.com",
+            "role": "Cá nhân",
+            "displayName": "Cá nhân (duchoan772003@gmail.com)",
+            "joinedAt": "2026-08-05T09:29:05.456Z"
+          }
+        ]
+      },
+      "transactions": [],
+      "categories": [
+        {
+          "id": "cat_1",
+          "name": "Ăn uống",
+          "icon": "🍔",
+          "limitAmount": 5000000,
+          "isRecurring": true
+        },
+        {
+          "id": "cat_2",
+          "name": "Di chuyển",
+          "icon": "🚗",
+          "limitAmount": 1200000,
+          "isRecurring": true
+        },
+        {
+          "id": "cat_3",
+          "name": "Nhà ở",
+          "icon": "🏠",
+          "limitAmount": 4000000,
+          "isRecurring": true
+        },
+        {
+          "id": "cat_4",
+          "name": "Giải trí",
+          "icon": "🎉",
+          "limitAmount": 2000000,
+          "isRecurring": true
+        },
+        {
+          "id": "cat_5",
+          "name": "Sức khỏe",
+          "icon": "💊",
+          "limitAmount": 600000,
+          "isRecurring": false
+        },
+        {
+          "id": "cat_6",
+          "name": "Học tập",
+          "icon": "📚",
+          "limitAmount": 1500000,
+          "isRecurring": true
+        },
+        {
+          "id": "cat_7",
+          "name": "Mua sắm",
+          "icon": "🛒",
+          "limitAmount": 3000000,
+          "isRecurring": true
+        },
+        {
+          "id": "cat_9",
+          "name": "Tiết kiệm & Tích lũy",
+          "icon": "🐖",
+          "limitAmount": 2000000,
+          "isRecurring": true
+        },
+        {
+          "id": "cat_8",
+          "name": "Khác",
+          "icon": "📦",
+          "limitAmount": 1000000,
+          "isRecurring": false
+        }
+      ],
+      "goals": [
+        {
+          "id": "g_1",
+          "name": "Tích lũy mua Laptop mới",
+          "targetAmount": 30000000,
+          "currentAmount": 12000000,
+          "targetDate": "2026-12-31",
+          "createdAt": "2026-08-05T09:29:05.456Z"
+        },
+        {
+          "id": "g_2",
+          "name": "Quỹ khẩn cấp phòng ngừa rủi ro",
+          "targetAmount": 15000000,
+          "currentAmount": 7000000,
+          "createdAt": "2026-08-05T09:29:05.456Z"
+        }
+      ]
+    },
+    "HY49-99M7": {
+      "household": {
+        "id": "hh_1785922459254",
+        "name": "haha",
+        "inviteCode": "HY49-99M7",
+        "createdAt": "2026-08-05T09:34:19.254Z",
+        "members": [
+          {
+            "id": "mem_1785922459254_1",
+            "name": "duchoan772003@gmail.com",
+            "role": "Cá nhân",
+            "displayName": "Cá nhân (duchoan772003@gmail.com)",
+            "joinedAt": "2026-08-05T09:34:19.254Z"
+          }
+        ]
+      },
+      "transactions": [],
+      "categories": [
+        {
+          "id": "cat_1",
+          "name": "Ăn uống",
+          "icon": "🍔",
+          "limitAmount": 5000000,
+          "isRecurring": true
+        },
+        {
+          "id": "cat_2",
+          "name": "Di chuyển",
+          "icon": "🚗",
+          "limitAmount": 1200000,
+          "isRecurring": true
+        },
+        {
+          "id": "cat_3",
+          "name": "Nhà ở",
+          "icon": "🏠",
+          "limitAmount": 4000000,
+          "isRecurring": true
+        },
+        {
+          "id": "cat_4",
+          "name": "Giải trí",
+          "icon": "🎉",
+          "limitAmount": 2000000,
+          "isRecurring": true
+        },
+        {
+          "id": "cat_5",
+          "name": "Sức khỏe",
+          "icon": "💊",
+          "limitAmount": 600000,
+          "isRecurring": false
+        },
+        {
+          "id": "cat_6",
+          "name": "Học tập",
+          "icon": "📚",
+          "limitAmount": 1500000,
+          "isRecurring": true
+        },
+        {
+          "id": "cat_7",
+          "name": "Mua sắm",
+          "icon": "🛒",
+          "limitAmount": 3000000,
+          "isRecurring": true
+        },
+        {
+          "id": "cat_9",
+          "name": "Tiết kiệm & Tích lũy",
+          "icon": "🐖",
+          "limitAmount": 2000000,
+          "isRecurring": true
+        },
+        {
+          "id": "cat_8",
+          "name": "Khác",
+          "icon": "📦",
+          "limitAmount": 1000000,
+          "isRecurring": false
+        }
+      ],
+      "goals": [
+        {
+          "id": "g_1",
+          "name": "Tích lũy mua Laptop mới",
+          "targetAmount": 30000000,
+          "currentAmount": 12000000,
+          "targetDate": "2026-12-31",
+          "createdAt": "2026-08-05T09:34:19.254Z"
+        },
+        {
+          "id": "g_2",
+          "name": "Quỹ khẩn cấp phòng ngừa rủi ro",
+          "targetAmount": 15000000,
+          "currentAmount": 7000000,
+          "createdAt": "2026-08-05T09:34:19.254Z"
+        }
+      ]
+    }
+  }
+}

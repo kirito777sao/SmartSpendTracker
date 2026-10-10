@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+/* Tailwind v4 mặc định dark: chỉ theo prefers-color-scheme của OS.
+   Dòng này bật lại cơ chế class-based (.dark trên <html>) để nút gạt
+   sáng/tối trong App.tsx điều khiển được thủ công, không phụ thuộc OS. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+/* =========================================================================
+   HỆ THỐNG THIẾT KẾ DARK MODE — CHỐT 18/08/2026 (T-S99, xem CONSTITUTION §1.26)
+   =========================================================================
+   Tham khảo phối màu: GitHub Dark Dimmed (nền #0d1117 không phải đen tuyệt
+   đối — đỡ chói/mỏi mắt hơn #000 hoặc slate-950 mặc định của Tailwind),
+   Linear (phân lớp bề mặt canvas/surface/raised rõ ràng bằng độ sáng, viền
+   mảnh 1px thay vì shadow đậm), Vercel (trung tính, gần như không sắc,
+   accent màu chỉ xuất hiện ở điểm nhấn), Discord (chữ chính KHÔNG dùng trắng
+   tuyệt đối #fff — dùng xám rất sáng #e6edf3 để giảm độ tương phản gắt gây
+   mỏi mắt khi đọc lâu, đúng khuyến nghị WCAG cho nền tối).
+
+   NGUYÊN TẮC: thay vì rải `dark:bg-slate-900 dark:text-slate-100` lặp lại ở
+   từng component (cách cũ trước T-S99 — chỉ làm ở App.tsx/NotificationBell,
+   khiến toàn bộ 9 component còn lại "tối đen" nhưng chữ/khung/badge bên
+   trong vẫn y nguyên màu sáng, không đọc được — đúng vấn đề người dùng nêu),
+   định nghĩa 1 bộ token ngữ nghĩa DÙNG CHUNG dưới dạng CSS custom properties.
+   Đổi `.dark` trên <html> tự động đổi GIÁ TRỊ của token — component chỉ cần
+   dùng ĐÚNG token (`bg-(--sst-surface)` thay vì `bg-white`), không cần viết
+   riêng 1 cặp light/dark cho từng chỗ.
+
+   QUY TẮC BẮT BUỘC khi thêm dark mode cho 1 component (áp dụng từ T-S100 trở
+   đi, xem TASKS.md):
+   1. Nền trang/canvas ngoài cùng      → bg-(--sst-canvas)
+   2. Nền card/header/dropdown/modal   → bg-(--sst-surface)
+   3. Nền khối phụ bên trong card (vd ô input, hàng bảng chẵn/lẻ, box slate-50
+      cũ)                              → bg-(--sst-surface-2)
+   4. Trạng thái hover nền trung tính  → bg-(--sst-surface-hover)
+   5. Viền mảnh (border-slate-100/200 cũ) → border-(--sst-border) (viền nhẹ)
+      hoặc border-(--sst-border-strong) (viền cần nổi rõ hơn, vd input focus)
+   6. Chữ chính (slate-800/900 cũ)     → text-(--sst-text)
+   7. Chữ phụ (slate-500/600 cũ)       → text-(--sst-text-secondary)
+   8. Chữ mờ/chú thích (slate-400 cũ)  → text-(--sst-text-muted)
+   9. Chữ rất mờ (slate-300 cũ)        → text-(--sst-text-faint)
+   10. Đổ bóng card/dropdown           → shadow-(--sst-shadow) (dùng cùng
+       `shadow-xs`/`shadow-md` sẵn có của Tailwind, chỉ đổi MÀU bóng qua biến
+       `--tw-shadow-color: var(--sst-shadow)`)
+   11. Badge/banner màu (bg-amber-50 text-amber-700 border-amber-200 kiểu cũ)
+       — KHÔNG có token riêng (vì cần giữ đúng sắc thái ngữ nghĩa: amber =
+       cảnh báo, rose = nguy hiểm, emerald = thành công...) — áp dụng "công
+       thức" cố định thay vì token: giữ nguyên class light, thêm đúng bộ 3
+       `dark:bg-{color}-500/10 dark:text-{color}-300 dark:border-{color}-500/25`
+       (nền accent RẤT mờ 10% opacity, chữ accent sáng vừa đủ tương phản trên
+       nền tối, viền accent mờ 25% — không dùng {color}-50/-700/-200 nguyên
+       xi của light mode vì quá chói/thiếu tương phản trên nền tối).
+   12. Nút solid accent (bg-indigo-600 kiểu cũ) — GIỮ NGUYÊN, không cần biến
+       thể dark riêng: màu bão hoà cao đọc tốt trên cả nền sáng lẫn tối, chỉ
+       cân nhắc `dark:hover:bg-indigo-500` nếu muốn hover sáng hơn 1 bậc.
+   Bảng token đầy đủ + giá trị light/dark: xem khối `:root`/`.dark` ngay dưới. */
+:root {
+  --sst-canvas: #f8fafc;
+  --sst-surface: #ffffff;
+  --sst-surface-2: #f8fafc;
+  --sst-surface-hover: #f1f5f9;
+  --sst-border: #f1f5f9;
+  --sst-border-strong: #e2e8f0;
+  --sst-text: #0f172a;
+  --sst-text-secondary: #475569;
+  --sst-text-muted: #94a3b8;
+  --sst-text-faint: #cbd5e1;
+  --sst-shadow: rgba(15, 23, 42, 0.08);
+}
+
+.dark {
+  --sst-canvas: #0b0f17;
+  --sst-surface: #11151d;
+  --sst-surface-2: #171c26;
+  --sst-surface-hover: #1c222d;
+  /* [T-S110, 19/08/2026] 4 giá trị dưới đây được NÂNG độ tương phản so với bản
+     gốc T-S99 — bản gốc đo được dưới chuẩn WCAG (border 1.29:1, border-strong
+     1.6:1, text-muted 3.98:1, text-faint 2.43:1 trên nền --sst-surface),
+     khiến viền input/card gần như vô hình và label/chú thích khó đọc — đúng
+     bug người dùng báo qua ảnh chụp UI khi verify T-S101. Giá trị mới đo lại
+     bằng công thức WCAG (xem CHANGELOG T-S110): border ~2.56:1, border-strong
+     ~4.01:1, text-muted ~6.37:1, text-faint ~3.9:1 — tham khảo mức viền/label
+     của GitHub Dark Dimmed/Linear (đã dẫn ở đầu file). Không đổi thứ tự phân
+     cấp (muted vẫn mờ hơn secondary, faint vẫn mờ hơn muted, border vẫn nhạt
+     hơn border-strong) — chỉ tăng độ sáng tuyệt đối trong đúng thứ bậc đó. */
+  /* [T-S111, 19/08/2026] Bản T-S110 vẫn ĐO ĐƯỢC dưới chuẩn WCAG thật khi kiểm
+     lại nghiêm hơn: border 2.56:1 (chuẩn UI component boundary 1.4.11 cần
+     ≥3:1), border-strong 4.01:1, text-faint 3.9:1 (chuẩn text thường 1.4.3
+     cần ≥4.5:1) — người dùng xác nhận vẫn thấy mờ sau T-S110. Giá trị dưới
+     đây tính lại bằng công thức WCAG thật (nội suy dần về trắng theo đúng hue
+     cũ, không đổi hue), có thêm biên an toàn: border 3.21:1, border-strong
+     4.6:1, text-muted 6.5:1 (không đổi nhiều, đã đạt), text-faint 4.6:1.
+     GIỮ NGUYÊN thứ bậc mờ dần (đúng nguyên tắc đã CHỐT ở T-S110). */
+  --sst-border: #5c677e;
+  --sst-border-strong: #758098;
+  --sst-text: #e7ebf3;
+  --sst-text-secondary: #a3adc2;
+  --sst-text-muted: #919bad;
+  --sst-text-faint: #788092;
+  --sst-shadow: rgba(0, 0, 0, 0.45);
+}
+
+/* Utilities to hide scrollbar while keeping scrolling functional */
+@utility no-scrollbar {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+
+  /* Firefox */
+  &::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari and Opera */
+  }
+}
+
+/* Smooth scrolling behavior */
+html {
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}

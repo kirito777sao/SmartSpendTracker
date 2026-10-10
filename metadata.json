@@ -1,0 +1,6 @@
+{
+  "name": "Smart Spend Tracker",
+  "description": "Ứng dụng Quản lý Chi tiêu Thông minh với NLP AI và phân tích tài chính chuyên sâu.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

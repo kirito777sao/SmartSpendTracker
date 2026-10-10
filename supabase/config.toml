@@ -1,0 +1,8 @@
+# T-S10 (16/08/2026): config.toml đầu tiên của dự án — chỉ cần cho
+# telegram-webhook (Telegram gọi tới không mang JWT Supabase, phải tắt
+# verify_jwt). parse-transaction KHÔNG khai báo ở đây — giữ mặc định
+# verify_jwt = true (gọi qua supabase.functions.invoke() từ user đã đăng
+# nhập trên web, JWT hợp lệ luôn có sẵn).
+
+[functions.telegram-webhook]
+verify_jwt = false
